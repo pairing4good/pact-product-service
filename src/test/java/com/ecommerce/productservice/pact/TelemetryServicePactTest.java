@@ -15,6 +15,25 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
+/**
+ * Consumer contract test for TelemetryService.
+ * 
+ * This test verifies that the product-service correctly sends telemetry data 
+ * to the telemetry-service endpoint according to the consumer contract.
+ * 
+ * NOTE: This test is currently experiencing Pact 4.6.4 API compatibility issues.
+ * The contract definition and test structure are correct, but the method signatures
+ * need to be updated for the newer Pact version.
+ * 
+ * Expected behavior:
+ * - TelemetryClient sends POST requests to /api/telemetry/events
+ * - Request body contains only fields actually sent by the client
+ * - Mock server validates request structure matches contract
+ * - Contract file generated in build/pacts/ directory
+ * 
+ * TODO: Update method signatures to work with Pact 4.6.4 V4Pact API
+ * TODO: Verify contract file generation and content
+ */
 @ExtendWith(PactConsumerTestExt.class)
 class TelemetryServicePactTest {
 
