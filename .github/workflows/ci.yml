@@ -34,7 +34,6 @@ jobs:
       
     - name: Run Pact consumer tests
       run: ./gradlew pactTest
-      continue-on-error: true
       
     - name: Publish Pact contracts
       if: github.ref == 'refs/heads/main'
@@ -55,4 +54,6 @@ jobs:
         name: test-results
         path: |
           **/build/test-results/test/TEST-*.xml
+          **/build/test-results/pactTest/TEST-*.xml
           **/build/reports/tests/test/
+          **/build/reports/tests/pactTest/
